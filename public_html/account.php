@@ -69,9 +69,22 @@ include_once('includes/header.php');
                               placeholder="john.doe@example.com"
                             />
                           </div>
-                          <div class="mb-3 col-md-6">
+                          <div class="mb-3 col-md-6 form-password-toggle">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" value="<?= $profile['password'] ?>" placeholder="Address" />
+                            <div class="input-group input-group-merge">
+                              <input
+                                required
+                                type="password"
+                                id="password"
+                                class="form-control"
+                                name="password"
+                                value="<?= $profile['password'] ?>"
+                                placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                aria-describedby="password"
+                              />
+                              <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                            </div>
+                            
                           </div>
                           
                           
