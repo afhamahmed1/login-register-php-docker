@@ -20,18 +20,17 @@ if (isset($_POST["login_btn"])) {
         $userid = $userdata['id'];
         $username = $userdata['name'];
         $useremail = $userdata['email'];
-        $role_as = $userdata['status'];
 
         $_SESSION['auth_user'] = [
             'userid' => $userid,
             'name' => $username,
             'email' => $useremail
         ];
-        $_SESSION['role_as'] = $role_as;
+        
 
-        if ($role_as == 1 || $role_as == 0) {
+        
             redirect("../index.php", "Welcome to dashboard");
-        }
+        
     } else {
         $_SESSION['error'] = 'Please enter the correct email or password';
         header('Location: ../login.php');

@@ -45,8 +45,21 @@ if (isset($_SESSION['success'])) {
         });
 
     </script>
+    
 <?php
+unset($_SESSION['error']);
+}else if(isset($_SESSION['message'])){
+
+    $message = $_SESSION['message'];
+    ?>
+    <script>
+        $(document).ready(function() {
+            alertify.success("<?php echo addslashes($message); ?>");
+        });
+
+    </script>
+    
+<?php
+unset($_SESSION['message']);
 }
 ?>
-
-

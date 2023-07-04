@@ -57,6 +57,6 @@ class Database {
 $host = 'mysql';
 $user = 'root';
 $pass = 'rootpassword';
-$dbname = "test";
+$dbname = "dbtest";
 
 $db = new Database($host, $user, $pass, $dbname);

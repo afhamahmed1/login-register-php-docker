@@ -13,9 +13,16 @@ if (isset($_POST['edit_account_btn'])) {
         "password" => $_POST['password']
     );
 
+    
+
     $db->update("users", $data, "id = :id", ['id' => $id]);
 
     if ($db) {
+        $_SESSION['auth_user'] = [
+            'userid' => $_POST['id'],
+            'name' => $_POST['name'],
+            'email' => $_POST['email']
+        ];
         redirect("index.php", "Profile Updated Successfully.");
     } else {
         redirect("index.php", "Something Went Wrong");
